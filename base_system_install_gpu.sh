@@ -66,7 +66,7 @@ sudo apt-get -y autoremove
 mkdir -p "$HOME"/transferstyle
 cd "$HOME"/transferstyle
 # Create DockerFile
-wget -c https://raw.githubusercontent.com/AlverGant/neural-style-transfer-docker/master/Dockerfile -O Dockerfile
+wget -c https://raw.githubusercontent.com/AlverGant/neural-style-transfer-docker/master/Dockerfile_GPU -O Dockerfile
 
 # "compile" docker images
 sudo docker build -t transferstyle .

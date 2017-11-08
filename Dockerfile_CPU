@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         git \
         libcupti-dev \
         python \
+	vim \
         wget \
         && \
     apt-get clean && \
@@ -33,7 +34,8 @@ RUN git clone https://github.com/lengstrom/fast-style-transfer && \
         wget -c https://d17h27t6h515a5.cloudfront.net/topher/2017/January/588aa846_udnie/udnie.ckpt && \
         wget -c https://d17h27t6h515a5.cloudfront.net/topher/2017/January/588aa883_scream/scream.ckpt && \
         wget -c https://d17h27t6h515a5.cloudfront.net/topher/2017/January/588aa89d_wave/wave.ckpt && \
-        wget -c https://d17h27t6h515a5.cloudfront.net/topher/2017/January/588aa8b6_wreck/wreck.ckpt
+        wget -c https://d17h27t6h515a5.cloudfront.net/topher/2017/January/588aa8b6_wreck/wreck.ckpt && \
+	sed -i "s/DEVICE.*/DEVICE = '/cpu:0'/" evaluate.py
 
 # For CUDA profiling, TensorFlow requires CUPTI.
 ENV LD_LIBRARY_PATH /usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH

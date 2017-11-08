@@ -48,10 +48,10 @@ mkdir -p "$HOME"/images_output
 # map ~/images_output to /output inside container
 # This container stylizes images on ~/images_input to ~/images_output and gracefully exits
 cd "$HOME"/transferstyle
-sudo docker run --memory 16g --rm -v "$HOME"/images_input:/input:ro -v "$HOME"/images_output:/output -it transferstyle
+sudo docker run --rm -v "$HOME"/images_input:/input:ro -v "$HOME"/images_output:/output -it transferstyle
 
 # When using docker toolbox, reset base machine resources
 # docker-machine rm default
-# docker-machine create -d virtualbox --virtualbox-cpu-count=6 --virtualbox-memory=16192 --virtualbox-disk-size=50000 default
+# docker-machine create -d virtualbox --virtualbox-cpu-count=6 --virtualbox-memory=12288 --virtualbox-disk-size=50000 default
 # docker-machine stop
 # exit

@@ -52,6 +52,6 @@ sudo docker run --rm -v "$HOME"/images_input:/input:ro -v "$HOME"/images_output:
 
 # When using docker toolbox, reset base machine resources
 # docker-machine rm default
-# docker-machine create -d virtualbox --virtualbox-cpu-count=6 --virtualbox-memory=12288 --virtualbox-disk-size=50000 default
+# docker-machine create -d virtualbox --virtualbox-cpu-count=12 --virtualbox-memory=12288 --virtualbox-disk-size=50000 default
 # docker-machine stop
 # exit
